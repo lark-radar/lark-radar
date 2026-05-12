@@ -6,3 +6,6 @@ radar-*.json
 .tmp/
 tmp/
 .DS_Store
+
+# generated issue drafts, not committed
+reports/*.md

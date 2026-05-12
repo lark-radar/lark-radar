@@ -17,7 +17,7 @@
 请修改 [`projects.md`](./projects.md)，按照表格格式新增一行：
 
 ```markdown
-| [owner/repo](https://github.com/owner/repo) | 分类 | 简短说明 | 备注 |
+| [owner/repo](https://github.com/owner/repo) | 分类 | 简短说明 |
 ```
 
 示例：

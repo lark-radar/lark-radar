@@ -14,7 +14,7 @@ description: 维护飞书 / Lark 开源生态项目雷达，扫描 GitHub 项目
 2. **不要 clone 仓库**：默认用 `gh api` 获取数据；只有明确需要代码级分析时才 clone。
 3. **项目列表唯一来源**：读取 `projects.md`，不要在脚本或回答里写死项目清单。
 4. **状态实时判断**：active / dormant / candidate 不手动维护，由扫描结果判断。
-5. **Radar 输出直接发聊天或 GitHub Issue 文案**：除非用户明确要求，不要额外写本地 Markdown 报告文件。
+5. **Radar Issue 发布流程**：生成正式 GitHub Issue 前，先把报告写到本地 `reports/*.md` 草稿文件；该目录不提交到仓库；再用 `gh issue create --body-file` 从文件发布。
 6. **输出风格参考**：`references/radar-issue-example.md`，但必须使用最新扫描数据，不可照抄旧数据。
 
 ## 常用路径
@@ -68,7 +68,7 @@ lark-cli docs +fetch --api-version v2 --doc "URL" --doc-format markdown
 5. 休眠观察
    - 根据 pushed_at 自动判断超过 3 个月未更新的项目
 6. 固定署名
-   - 每份报告末尾必须添加：`— by [Pokoclaw](https://github.com/danielwpz/pokoclaw)`
+   - 每份报告末尾必须添加：`Made by [Pokoclaw](https://github.com/danielwpz/pokoclaw) with love 💜`
 
 ## 状态标记建议
 
@@ -97,4 +97,4 @@ lark-cli docs +fetch --api-version v2 --doc "URL" --doc-format markdown
 - 社区热点分析要基于真实 PR / Issue / Commit
 - 不要使用“可能”“应该”等没有数据支撑的推断过多
 - 不要生成不存在的版本、PR、Issue 或趋势
-- 报告末尾必须保留署名：`— by [Pokoclaw](https://github.com/danielwpz/pokoclaw)`
+- 报告末尾必须保留署名：`Made by [Pokoclaw](https://github.com/danielwpz/pokoclaw) with love 💜`

@@ -110,4 +110,4 @@ MCP 是飞书生态接入 AI 编码工具的重要方向，这个项目值得持
 
 ---
 
-— by [Pokoclaw](https://github.com/danielwpz/pokoclaw)
+Made by [Pokoclaw](https://github.com/danielwpz/pokoclaw) with love 💜
