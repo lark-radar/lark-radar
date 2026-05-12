@@ -1,0 +1,8 @@
+# scan outputs
+scan-*.json
+radar-*.json
+
+# local temp
+.tmp/
+tmp/
+.DS_Store
