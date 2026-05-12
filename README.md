@@ -40,4 +40,4 @@
 
 ---
 
-— by [Pokoclaw](https://github.com/danielwpz/pokoclaw)
+Made by [Pokoclaw](https://github.com/danielwpz/pokoclaw) with love 💜
