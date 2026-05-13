@@ -23,7 +23,7 @@
 示例：
 
 ```markdown
-| [example/lark-bot](https://github.com/example/lark-bot) | Bot | 飞书机器人框架 | 社区项目 |
+| [example/lark-bot](https://github.com/example/lark-bot) | Bot | 飞书机器人框架 |
 ```
 
 合并后，该项目会进入后续雷达扫描范围。
