@@ -14,6 +14,7 @@ COMMIT_LIMIT=100
 ISSUE_LIMIT=20
 PR_LIMIT=20
 SLEEP_SECONDS="0.1"
+JOBS=1
 OUTPUT_FILE=""
 
 usage() {
@@ -27,6 +28,7 @@ Options:
   --issue-limit N          Max issues fetched per repo. Default: $ISSUE_LIMIT
   --pr-limit N             Max PRs fetched per repo. Default: $PR_LIMIT
   --sleep SECONDS          Sleep between repos. Default: $SLEEP_SECONDS
+  --jobs N                 Parallel repo scans. Default: $JOBS
   --output FILE            Write JSON to file instead of stdout.
   -h, --help               Show help.
 EOF
@@ -40,6 +42,7 @@ while [[ $# -gt 0 ]]; do
     --issue-limit) ISSUE_LIMIT="$2"; shift 2 ;;
     --pr-limit) PR_LIMIT="$2"; shift 2 ;;
     --sleep) SLEEP_SECONDS="$2"; shift 2 ;;
+    --jobs) JOBS="$2"; shift 2 ;;
     --output) OUTPUT_FILE="$2"; shift 2 ;;
     -h|--help) usage; exit 0 ;;
     *) echo "Unknown option: $1" >&2; usage >&2; exit 2 ;;
@@ -171,11 +174,28 @@ idx=0
 for repo in "${REPOS[@]}"; do
   idx=$((idx + 1))
   echo "[$idx/${#REPOS[@]}] $repo" >&2
-  scan_one "$repo" "$TMP_DIR/$idx.json" || \
-    jq -n --arg repo "$repo" --arg error "scan_failed" \
-      '{repo:{full_name:$repo}, error:$error, commits:[], issues:[], prs:[], activity:{commit_count:0, issue_count:0, pr_count:0}}' > "$TMP_DIR/$idx.json"
-  sleep "$SLEEP_SECONDS"
+
+  if [[ "$JOBS" -le 1 ]]; then
+    scan_one "$repo" "$TMP_DIR/$idx.json" || \
+      jq -n --arg repo "$repo" --arg error "scan_failed" \
+        '{repo:{full_name:$repo}, error:$error, commits:[], issues:[], prs:[], activity:{commit_count:0, issue_count:0, pr_count:0}}' > "$TMP_DIR/$idx.json"
+    sleep "$SLEEP_SECONDS"
+  else
+    (
+      scan_one "$repo" "$TMP_DIR/$idx.json" || \
+        jq -n --arg repo "$repo" --arg error "scan_failed" \
+          '{repo:{full_name:$repo}, error:$error, commits:[], issues:[], prs:[], activity:{commit_count:0, issue_count:0, pr_count:0}}' > "$TMP_DIR/$idx.json"
+    ) &
+    while [[ "$(jobs -rp | wc -l | tr -d ' ')" -ge "$JOBS" ]]; do
+      wait -n || true
+    done
+    sleep "$SLEEP_SECONDS"
+  fi
 done
+
+if [[ "$JOBS" -gt 1 ]]; then
+  wait || true
+fi
 
 if [[ -n "$OUTPUT_FILE" ]]; then
   mkdir -p "$(dirname "$OUTPUT_FILE")"
