@@ -16,7 +16,7 @@ description: 维护飞书 / Lark 开源生态项目雷达，扫描 GitHub 项目
 4. **项目列表唯一来源**：读取 `projects.md`，不要在脚本或回答里写死项目清单。
 5. **状态实时判断**：active / dormant / candidate 不手动维护，由扫描结果判断。
 6. **脚本失败处理**：如果扫描输出截断、失败、字段不够或 JSON 过大导致错误，必须修复/增强 `scripts/lark-radar-scan.sh` 并重跑脚本；不得绕过脚本另写临时 GitHub 查询。
-7. **Radar Issue 发布流程**：生成正式 GitHub Issue 前，先把报告写到本地 `reports/*.md` 草稿文件；该目录不提交到仓库；再用 `gh issue create --body-file` 从文件发布。
+7. **Radar Issue 发布流程**：生成正式 GitHub Issue 前，先把报告写到本地 `reports/*.md` 草稿文件；该目录不提交到仓库；再用 `gh issue create --title "🛰️ 飞书生态开源项目雷达 · YYYY-MM-DD" --body-file <草稿文件>` 从文件发布，Issue 标题本身必须带卫星 emoji。
 8. **输出风格参考**：`references/radar-issue-example.md`，但必须使用最新扫描数据，不可照抄旧数据。
 
 ## 常用路径
