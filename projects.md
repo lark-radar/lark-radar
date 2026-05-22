@@ -33,7 +33,6 @@
 | [heshengtao/comfyui_LLM_party](https://github.com/heshengtao/comfyui_LLM_party) | AI Workflow | ComfyUI LLM 工作流与集成 |
 | [kevinluosl/deepbot](https://github.com/kevinluosl/deepbot) | AI Bot | AI Bot / 聊天机器人项目 |
 | [LetTTGACO/elog](https://github.com/LetTTGACO/elog) | 内容工具 | 开放式跨平台博客解决方案 |
-| [memohai/Memoh](https://github.com/memohai/Memoh) | AI Memory | AI 记忆与知识管理项目 |
 | [yincongcyincong/MuseBot](https://github.com/yincongcyincong/MuseBot) | AI Bot | 多平台 AI Bot 项目 |
 | [OpenCoworkAI/open-cowork](https://github.com/OpenCoworkAI/open-cowork) | AI Agent | 开源 AI 协作 / Cowork 项目 |
 | [bestony/ChatGPT-Feishu](https://github.com/bestony/ChatGPT-Feishu) | AI Bot | ChatGPT 接入飞书机器人 |
