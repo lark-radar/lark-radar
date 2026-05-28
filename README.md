@@ -2,7 +2,7 @@
 
 这是一个追踪 **飞书 / Lark 开源生态项目** 的社区雷达。
 
-我们会定期观察 GitHub 上和飞书生态相关的开源项目，包括 Bot、AI Agent、MCP、CLI、文档工具、IM Bridge、多 Agent 协作等方向，并整理成雷达报告。
+我们会每周五 17:00（北京时间）观察 GitHub 上和飞书生态相关的开源项目，包括 Bot、AI Agent、MCP、CLI、文档工具、IM Bridge、多 Agent 协作等方向，并整理成雷达报告。
 
 ## 看最新雷达
 

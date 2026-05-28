@@ -59,7 +59,7 @@ lark-cli docs +fetch --api-version v2 --doc "URL" --doc-format markdown
 
 ## Radar Issue 推荐结构
 
-1. 今日速览
+1. 本期速览
    - 用一段话概括本期主要变化
    - 列出最活跃项目和关键趋势
 2. 各项目进展
@@ -102,7 +102,7 @@ lark-cli docs +fetch --api-version v2 --doc "URL" --doc-format markdown
 
 - 简洁，但不能过度简化
 - 每个项目名都使用 Markdown link
-- 今日速览要有判断，但必须由数据支撑
+- 本期速览要有判断，但必须由数据支撑
 - 社区热点分析要基于真实 PR / Issue / Commit
 - 不要使用“可能”“应该”等没有数据支撑的推断过多
 - 不要生成不存在的版本、PR、Issue 或趋势
