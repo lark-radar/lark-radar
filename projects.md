@@ -26,7 +26,6 @@
 | [jingsongliujing/Feishu-CLI-Web](https://github.com/jingsongliujing/Feishu-CLI-Web) | Web 工具 | 飞书 / Lark CLI 智能 Web 多用户工作台 |
 | [Flamingo93/commit-and-record-lark](https://github.com/Flamingo93/commit-and-record-lark) | 开发者工具 | 提交代码并记录到 Lark 的工具 |
 | [baileyh8/hermes-feishu-streaming-card](https://github.com/baileyh8/hermes-feishu-streaming-card) | Bot / Card | 飞书流式卡片相关工具 |
-| [langbot-app/LangBot](https://github.com/langbot-app/LangBot) | AI Bot | 大模型即时通信机器人平台 |
 | [chenhg5/cc-connect](https://github.com/chenhg5/cc-connect) | IM Bridge | Claude Code / AI 工具连接器 |
 | [refly-ai/refly](https://github.com/refly-ai/refly) | AI Workspace | 开源 AI 原生创作与工作流平台 |
 | [nexu-io/nexu](https://github.com/nexu-io/nexu) | AI Agent | 开源 AI Agent / 自动化项目 |
